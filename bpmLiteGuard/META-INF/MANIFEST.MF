@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: bpmLiteGuard
+Bundle-SymbolicName: bpmLiteGuard
+Bundle-Version: 1.0.0.qualifier
+Export-Package: config,
+ database,
+ database.DAO,
+ engineConnector,
+ jmsConnector,
+ rest,
+ servlets,
+ tests,
+ workers
+Require-Bundle: bpmLiteCommon;bundle-version="1.0.0"

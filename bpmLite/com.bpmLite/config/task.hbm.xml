@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="database.model.AssignedRoleModel" table="assigned_role">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+
+		<property name="user">
+			<column name="user" />
+		</property>
+		<property name="role">
+			<column name="role" />
+		</property>
+		<property name="groupMembership">
+			<column name="group_membership" />
+		</property>
+		<property name="userSkills">
+			<column name="user_skils" />
+		</property>
+	</class>
+
+	<class name="database.model.AuditModel" table="audit">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+
+		<property name="action">
+			<column name="action" />
+		</property>
+		<property name="user">
+			<column name="user" />
+		</property>
+		<property name="stepId">
+			<column name="step_id" />
+		</property>
+		<property name="startTime">
+			<column name="start_time" />
+		</property>
+		<property name="completeTime">
+			<column name="complete_time" />
+		</property>
+	</class>
+
+
+	<class name="database.model.JoinStatusModel" table="join_status">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+
+		<property name="stepId">
+			<column name="step_id" />
+		</property>
+		<property name="stepOne">
+			<column name="step_one" />
+		</property>
+		<property name="stepTwo">
+			<column name="step_two" />
+		</property>
+		<property name="stepThree">
+			<column name="step_three" />
+		</property>
+		<property name="stepCountRequired">
+			<column name="step_count_required" />
+		</property>
+	</class>
+	
+	<class name="database.model.ProcessInstanceModel" table="process_instance">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+
+		<property name="processId">
+			<column name="process_id" />
+		</property>
+		<property name="currentStepId">
+			<column name="current_step_id" />
+		</property>
+		<property name="caseId">
+			<column name="case_id" />
+		</property>
+		<property name="initialDataSet">
+			<column name="initial_data_set" />
+		</property>
+		<property name="guidCallback">
+			<column name="guid_callback" />
+		</property>
+	</class>
+	
+	<class name="database.model.ProcessModel" table="process">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+
+		<property name="name">
+			<column name="name" />
+		</property>
+		<property name="version">
+			<column name="version" />
+		</property>
+		<property name="uniqueGuid">
+			<column name="unique_guid" />
+		</property>
+		<property name="startStep">
+			<column name="start_step" />
+		</property>
+		<property name="fieldIds">
+			<column name="field_ids" />
+		</property>
+		<property name="globalIds">
+			<column name="global_ids" />
+		</property>
+	</class>	
+	
+	<class name="database.model.StepDataModel" table="step_data">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+
+		<property name="stepId">
+			<column name="step_id" />
+		</property>
+		<property name="processId">
+			<column name="process_id" />
+		</property>
+		<property name="stepType">
+			<column name="step_type" />
+		</property>
+		<property name="stepDetails">
+			<column name="step_details" />
+		</property>
+		<property name="userList">
+			<column name="user_list" />
+		</property>
+		<property name="nextId">
+			<column name="next_id" />
+		</property>
+		<property name="previousId">
+			<column name="previous_id" />
+		</property>
+		<property name="fieldData">
+			<column name="field_data" />
+		</property>
+		<property name="globalData">
+			<column name="global_data" />
+		</property>
+		<property name="displayOnly">
+			<column name="displayOnly" />
+		</property>
+	</class>	
+	
+	<class name="database.model.UserGroupsModel" table="user_groups">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+
+		<property name="name">
+			<column name="name" />
+		</property>
+		<property name="description">
+			<column name="description" />
+		</property>
+	</class>
+
+	<class name="database.model.UserModel" table="user">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+
+		<property name="name">
+			<column name="name" />
+		</property>
+		<property name="description">
+			<column name="description" />
+		</property>
+		<property name="uniqueKey">
+			<column name="unique_key" />
+		</property>
+		<property name="startTime">
+			<column name="start_time" />
+		</property>
+		<property name="tibbrAddress">
+			<column name="tibbr_address" />
+		</property>
+	</class>
+	
+	<class name="database.model.UserSkillsModel" table="user_skills">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+
+		<property name="name">
+			<column name="name" />
+		</property>
+		<property name="description">
+			<column name="description" />
+		</property>
+	</class>
+	
+	
+	<class name="database.model.ServerInfoModel" table="server_info">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+
+		<property name="name">
+			<column name="name" />
+		</property>
+		<property name="value">
+			<column name="value" />
+		</property>
+	</class>
+	
+	<class name="database.model.GlobalMappingsModel" table="global_mappings">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+
+		<property name="globalGuardId">
+			<column name="global_guard_id" />
+		</property>
+		<property name="globalDeployedId">
+			<column name="global_deployed_id" />
+		</property>
+	</class>
+	
+	<class name="database.model.FieldDataModel" table="field_data">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+
+		<property name="name">
+			<column name="name" />
+		</property>
+		<property name="type">
+			<column name="type" />
+		</property>
+		<property name="initialData">
+			<column name="initial_data" />
+		</property>
+		<property name="fieldId">
+			<column name="field_id" />
+		</property>
+	</class>
+
+</hibernate-mapping>

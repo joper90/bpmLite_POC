@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: bpmLiteTestClient
+Bundle-SymbolicName: bpmLiteTestClient
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.bpmlite.guard.testclient,
+ com.bpmlite.testclient,
+ database,
+ jms,
+ model,
+ normalTests
+Require-Bundle: bpmLiteCommon;bundle-version="1.0.0"
